@@ -1,0 +1,62 @@
+git init 
+
+git branch -M main 
+git add . 
+git commit -m " " 
+
+git remote add origin  "repo"
+
+ git push -u origin main
+
+
+
+
+------------------------------------
+ ssh-keygen -t ed25519 -C "email@gmail.com" 
+
+in powershell do -: 
+
+ (New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+
+ Set-Service -Name sshd -StartupType 'Automatic'
+
+PS C:\Users\hp> Get-Service -Name ssh-agent
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  ssh-agent          OpenSSH Authentication Agent
+
+
+isko on krne k liye mannualy we have to do win + r  - >  services.msc -> usme openssh vali ko dhoondh ke usko automatic pr set krke start and apply fir abb vo running hojeyagi 
+
+PS C:\Users\hp> Start-Service ssh-agent
+PS C:\Users\hp> Get-Service -Name ssh-agent
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  ssh-agent          OpenSSH Authentication Agent
+
+
+
+---------------------------------------------------------
+
+abb vs code cmd pr 
+
+
+ ssh-add C:\Users\hp\.ssh\id_ed25519
+Identity added: C:\Users\hp\.ssh\id_ed25519 (sss@gmail.com)
+PS E:\ react> notepad C:\Users\hp\.ssh\id_ed25519.pub
+
+
+ye jo bnega usko GitHub  -> ssh -> usme new bnake paste krdena  
+
+vapis cmd pr aakr do -: 
+
+PS E:\ react> ssh -T git@github.com
+
+Hi DevanshuRastogi! You've successfully authenticated, but GitHub does not provide shell access.
+PS E:\akshay react> git push -u origin main
+
+
+abb shi chlega sbb mast ekdum 
